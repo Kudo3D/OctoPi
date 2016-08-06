@@ -45,6 +45,8 @@ wait
 mkdir -p /root/3dPrinters
 echo "updateRepo=Kudo3D/Photonic3D" > /root/3dPrinters/config.properties
 
+export HOME=/root
+
 ./start.sh
 
 echo "All installed packages:"
