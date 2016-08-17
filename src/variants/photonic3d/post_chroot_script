@@ -39,8 +39,9 @@ chmod a+rx start.sh
 #sed -i -e 's/^\(\s*java \)/\#\1/' start.sh
 #sed -i -e 's/^\(\s*startx \)/\#\1/' start.sh
 
-# Wait until background tasks (curl DL of dist zip) complete
-wait
+# Wifi Reconnect
+mv /etc/ifplugd/action.d/ifupdown /etc/ifplugd/action.d/ifupdown.original
+ln -s /etc/wpa_supplicant/ifupdown.sh /etc/ifplugd/action.d/ifupdown
 
 mkdir -p /root/3dPrinters
 echo "updateRepo=Kudo3D/Photonic3D" > /root/3dPrinters/config.properties
